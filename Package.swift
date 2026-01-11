@@ -1,0 +1,51 @@
+// swift-tools-version: 6.2
+
+import PackageDescription
+
+let package = Package(
+    name: "swift-loader",
+    platforms: [
+        .macOS(.v26),
+        .iOS(.v26),
+        .tvOS(.v26),
+        .watchOS(.v26),
+        .visionOS(.v26),
+    ],
+    products: [
+        .library(
+            name: "Loader",
+            targets: ["Loader"]
+        ),
+    ],
+    dependencies: [
+        .package(path: "../../swift-primitives/swift-loader-primitives"),
+        .package(path: "../../swift-primitives/swift-darwin-primitives"),
+        .package(path: "../../swift-primitives/swift-linux-primitives"),
+        .package(path: "../swift-posix"),
+        .package(path: "../swift-darwin"),
+        .package(path: "../swift-linux"),
+        .package(path: "../swift-windows"),
+    ],
+    targets: [
+        .target(
+            name: "Loader",
+            dependencies: [
+                .product(name: "Loader Primitives", package: "swift-loader-primitives"),
+                .product(name: "POSIX Loader", package: "swift-posix", condition: .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .visionOS, .linux])),
+                .product(name: "Darwin Loader", package: "swift-darwin", condition: .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .visionOS])),
+                .product(name: "Linux Loader", package: "swift-linux", condition: .when(platforms: [.linux])),
+                // .product(name: "Windows Loader", package: "swift-windows", condition: .when(platforms: [.windows])),
+            ]
+        ),
+    ],
+    swiftLanguageModes: [.v6]
+)
+
+for target in package.targets where ![.system, .binary, .plugin].contains(target.type) {
+    let settings: [SwiftSetting] = [
+        .enableUpcomingFeature("ExistentialAny"),
+        .enableUpcomingFeature("InternalImportsByDefault"),
+        .enableUpcomingFeature("MemberImportsByDefault"),
+    ]
+    target.swiftSettings = (target.swiftSettings ?? []) + settings
+}
