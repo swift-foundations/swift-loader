@@ -18,13 +18,13 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-primitives/swift-loader-primitives.git", from: "0.0.1"),
-        .package(url: "https://github.com/swift-primitives/swift-darwin-primitives.git", from: "0.0.1"),
-        .package(url: "https://github.com/swift-primitives/swift-linux-primitives.git", from: "0.0.1"),
-        .package(url: "https://github.com/swift-foundations/swift-posix.git", from: "0.0.1"),
-        .package(url: "https://github.com/swift-foundations/swift-darwin.git", from: "0.0.1"),
-        .package(url: "https://github.com/swift-foundations/swift-linux.git", from: "0.0.1"),
-        .package(url: "https://github.com/swift-foundations/swift-windows.git", from: "0.0.1"),
+        .package(path: "../../swift-primitives/swift-loader-primitives"),
+        .package(path: "../../swift-primitives/swift-darwin-primitives"),
+        .package(path: "../../swift-primitives/swift-linux-primitives"),
+        .package(path: "../swift-posix"),
+        .package(path: "../swift-darwin"),
+        .package(path: "../swift-linux"),
+        .package(path: "../swift-windows"),
     ],
     targets: [
         .target(
