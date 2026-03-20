@@ -16,10 +16,13 @@ let package = Package(
             name: "Loader",
             targets: ["Loader"]
         ),
+        .library(
+            name: "Loader Test Support",
+            targets: ["Loader Test Support"]
+        ),
     ],
     dependencies: [
         .package(path: "../../swift-primitives/swift-loader-primitives"),
-        .package(path: "../../swift-primitives/swift-darwin-primitives"),
         .package(path: "../../swift-primitives/swift-linux-primitives"),
         .package(path: "../swift-posix"),
         .package(path: "../swift-darwin"),
@@ -38,8 +41,14 @@ let package = Package(
                 .product(name: "POSIX Loader", package: "swift-posix", condition: .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .visionOS, .linux])),
                 .product(name: "Darwin Loader", package: "swift-darwin", condition: .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .visionOS])),
                 .product(name: "Linux Loader", package: "swift-linux", condition: .when(platforms: [.linux])),
-                // .product(name: "Windows Loader", package: "swift-windows", condition: .when(platforms: [.windows])),
             ]
+        ),
+        .target(
+            name: "Loader Test Support",
+            dependencies: [
+                "Loader",
+            ],
+            path: "Tests/Support"
         ),
     ],
     swiftLanguageModes: [.v6]
