@@ -9,7 +9,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-internal import CTypeMetadata
+public import CTypeMetadata
 
 extension Loader {
     /// Enumerates all Swift types whose name contains the given substring.
