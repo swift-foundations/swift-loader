@@ -46,7 +46,7 @@ extension Loader.Symbol {
         #if os(Windows)
         fatalError("Windows Loader.Symbol.lookup not yet implemented")
         #else
-        return try POSIX.Loader.Symbol.lookup(name: name, in: scope)
+        return try unsafe POSIX.Loader.Symbol.lookup(name: name, in: scope)
         #endif
     }
 }

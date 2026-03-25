@@ -30,7 +30,7 @@ extension Loader {
             guard stride > 0 else { continue }
 
             for offset in Swift.stride(from: 0, to: buffer.count, by: stride) {
-                guard let baseAddress = unsafe buffer.baseAddress else { continue }
+                guard let baseAddress = buffer.baseAddress else { continue }
                 let recordAddress = unsafe baseAddress + offset
 
                 let metatype = unsafe substring.withCString { cString in

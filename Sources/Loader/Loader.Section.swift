@@ -45,9 +45,9 @@ extension Loader.Section {
     @inlinable
     public static func all(_ name: Name) -> some Sequence<Bounds> {
         #if canImport(Darwin)
-        return Darwin.Loader.Section.all(name)
+        return unsafe Darwin.Loader.Section.all(name)
         #elseif os(Linux) || os(FreeBSD) || os(OpenBSD) || os(Android)
-        return Linux.Loader.Section.all(name)
+        return unsafe Linux.Loader.Section.all(name)
         #else
         return EmptyCollection<Bounds>()
         #endif
