@@ -9,14 +9,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import Loader_Primitives
+#if os(Windows)
 
-#if canImport(Darwin)
-public import Darwin_Loader
-#elseif os(Linux)
-public import POSIX_Loader
-#endif
-
+import Loader_Primitives
 extension Loader.Symbol {
     /// Looks up a symbol by name in the specified scope.
     ///
@@ -28,7 +23,7 @@ extension Loader.Symbol {
     ///
     /// ## Platform Implementation
     ///
-    /// - **POSIX (Darwin, Linux):** Uses `dlsym`
+    /// - **POSIX (Darwin, Linux):** Uses `dlsym` (via ISO_9945.Loader.Symbol.lookup)
     /// - **Windows:** Uses `GetProcAddress` (future)
     ///
     /// ## Example
@@ -43,10 +38,7 @@ extension Loader.Symbol {
         name: UnsafePointer<CChar>,
         in scope: Scope
     ) throws(Loader.Error) -> UnsafeRawPointer {
-        #if os(Windows)
         fatalError("Windows Loader.Symbol.lookup not yet implemented")
-        #else
-        return try unsafe POSIX.Loader.Symbol.lookup(name: name, in: scope)
-        #endif
     }
 }
+#endif
