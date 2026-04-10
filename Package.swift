@@ -23,7 +23,6 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../../swift-primitives/swift-loader-primitives"),
-        .package(path: "../../swift-primitives/swift-linux-primitives"),
         .package(path: "../swift-posix"),
         .package(path: "../swift-darwin"),
         .package(path: "../swift-linux"),
