@@ -13,10 +13,8 @@ public import Loader_Primitives
 
 #if canImport(Darwin)
 public import Darwin_Loader
-public import Darwin_Primitives
 #elseif os(Linux) || os(FreeBSD) || os(OpenBSD) || os(Android)
 public import Linux_Loader
-public import Linux_Primitives
 #endif
 
 extension Loader.Section {
