@@ -41,7 +41,7 @@ extension Loader.Section {
     /// }
     /// ```
     @inlinable
-    public static func all(_ name: Name) -> some Sequence<Bounds> {
+    public static func all(_ name: Name) -> some Swift.Sequence<Bounds> {
         #if canImport(Darwin)
         return unsafe Array(Darwin.Loader.Section.all(name))
         #elseif os(Linux) || os(FreeBSD) || os(OpenBSD) || os(Android)
