@@ -26,7 +26,6 @@ let package = Package(
         .package(url: "https://github.com/swift-foundations/swift-posix.git", branch: "main"),
         .package(url: "https://github.com/swift-foundations/swift-darwin.git", branch: "main"),
         .package(url: "https://github.com/swift-foundations/swift-linux.git", branch: "main"),
-        .package(url: "https://github.com/swift-foundations/swift-windows.git", branch: "main"),
     ],
     targets: [
         .target(
