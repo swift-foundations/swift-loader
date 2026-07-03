@@ -24,7 +24,7 @@ extension Loader {
     ) -> [Any.Type] {
         var result: [Any.Type] = []
 
-        for bounds in Loader.Section.all(.swiftTypeMetadata) {
+        for bounds in Self.Section.all(.swiftTypeMetadata) {
             let buffer = unsafe bounds.buffer
             let stride = SWTTypeMetadataRecordByteCount
             guard stride > 0 else { continue }
