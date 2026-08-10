@@ -12,7 +12,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-#include "CTypeMetadata.h"
+#include "Type Metadata Shims.h"
 
 #include <cstdint>
 #include <cstring>

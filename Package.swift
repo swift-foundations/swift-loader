@@ -29,12 +29,12 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "CTypeMetadata"
+            name: "Type Metadata Shims"
         ),
         .target(
             name: "Loader",
             dependencies: [
-                "CTypeMetadata",
+                "Type Metadata Shims",
                 .product(name: "Loader Primitives", package: "swift-loader-primitives"),
                 .product(name: "POSIX Loader", package: "swift-posix", condition: .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .visionOS, .linux])),
                 .product(name: "Darwin Loader", package: "swift-darwin", condition: .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .visionOS])),

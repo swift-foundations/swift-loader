@@ -144,7 +144,7 @@ The `Loader Test Support` product gives test targets a stable import for loader-
 
 ## Acknowledgments
 
-The internal `CTypeMetadata` target's type-metadata record walker is ported from [swift-testing](https://github.com/swiftlang/swift-testing)'s `Discovery.cpp` (copyright Apple Inc., Apache License 2.0 with Runtime Library Exception).
+The internal `Type Metadata Shims` target's type-metadata record walker is ported from [swift-testing](https://github.com/swiftlang/swift-testing)'s `Discovery.cpp` (copyright Apple Inc., Apache License 2.0 with Runtime Library Exception).
 
 ---
 

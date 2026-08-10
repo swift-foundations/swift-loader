@@ -9,7 +9,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-internal import CTypeMetadata
+internal import Type_Metadata_Shims
 
 extension Loader {
     /// Enumerates all Swift types whose name contains the given substring.
