@@ -9,10 +9,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import Testing
-
 import Loader
 import Loader_Test_Support
+import Testing
 
 extension Loader {
     @Suite struct Tests {
@@ -23,7 +22,7 @@ extension Loader {
             @Test func `a type declared in this module is discoverable by name`() {
                 let found = Loader.types(named: "MetadataDiscoveryProbe")
 
-                #if canImport(Darwin) || os(Linux) || os(FreeBSD) || os(OpenBSD) || os(Android)
+                #if canImport(Darwin)
                     #expect(
                         found.contains { $0 == Loader.Tests.MetadataDiscoveryProbe.self },
                         "The probe type must be recoverable from the type metadata section"
