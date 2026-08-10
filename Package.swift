@@ -48,6 +48,13 @@ let package = Package(
             ],
             path: "Tests/Support"
         ),
+        .testTarget(
+            name: "Loader Tests",
+            dependencies: [
+                "Loader",
+                "Loader Test Support",
+            ]
+        ),
     ],
     swiftLanguageModes: [.v6]
 )
