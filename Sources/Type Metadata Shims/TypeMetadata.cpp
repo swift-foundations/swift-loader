@@ -1,17 +1,3 @@
-// ===----------------------------------------------------------------------===//
-//
-// This source file is part of the swift-loader open source project
-//
-// Copyright (c) 2024-2025 Coen ten Thije Boonkkamp and the swift-loader project authors
-// Licensed under Apache License v2.0
-//
-// Ported from Apple's swift-testing Sources/_TestingInternals/Discovery.cpp
-// Original copyright (c) 2023-2025 Apple Inc. (Apache 2.0 with Runtime Library Exception)
-//
-// See LICENSE for license information
-//
-// ===----------------------------------------------------------------------===//
-
 #include "CTypeMetadata.h"
 
 #include <cstdint>
@@ -28,9 +14,6 @@
 #define SWT_PTRAUTH_SWIFT_TYPE_DESCRIPTOR
 #endif
 
-/// A type representing a pointer relative to itself.
-///
-/// Derived from `RelativeDirectPointerIntPair` in the Swift repository.
 template <typename T, int32_t maskValue = 0>
 struct SWTRelativePointer {
 private:
@@ -68,9 +51,6 @@ public:
     }
 };
 
-/// A type representing a 32-bit absolute function pointer.
-///
-/// Derived from `AbsoluteFunctionPointer` in the Swift repository.
 template <typename T>
 struct SWTAbsoluteFunctionPointer {
 private:
@@ -84,9 +64,6 @@ public:
     }
 };
 
-/// A relative pointer with low bits reserved for flags.
-///
-/// Derived from `RelativeDirectPointerIntPair` in the Swift repository.
 template <typename T, typename I,
     int32_t maskValue = (alignof(int32_t) - 1)>
 struct SWTRelativePointerIntPair
@@ -103,9 +80,6 @@ using SWTCompactFunctionPointer = SWTAbsoluteFunctionPointer<T>;
 using SWTCompactFunctionPointer = SWTRelativePointer<T>;
 #endif
 
-/// A type representing a metatype as constructed during compilation.
-///
-/// Derived from `TargetTypeContextDescriptor` in the Swift repository.
 struct SWTTypeContextDescriptor {
 private:
     uint32_t _flags;
@@ -138,9 +112,6 @@ public:
     }
 };
 
-/// A type representing a relative pointer to a type descriptor.
-///
-/// Derived from `TargetTypeMetadataRecord` in the Swift repository.
 struct SWTTypeMetadataRecord {
 private:
     SWTRelativePointerIntPair<void, unsigned int> _pointer;
@@ -149,10 +120,10 @@ public:
     const SWTTypeContextDescriptor *_Nullable
     getContextDescriptor(void) const {
         switch (_pointer.getInt()) {
-        case 0: // Direct pointer.
+        case 0:
             return reinterpret_cast<
                 const SWTTypeContextDescriptor *>(_pointer.get());
-        case 1: // Indirect pointer (pointer to a pointer).
+        case 1:
             if (auto contextDescriptor = reinterpret_cast<
                     SWTTypeContextDescriptor *const
                         SWT_PTRAUTH_SWIFT_TYPE_DESCRIPTOR *>(

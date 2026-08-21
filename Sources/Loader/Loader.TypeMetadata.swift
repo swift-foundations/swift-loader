@@ -1,24 +1,7 @@
-// ===----------------------------------------------------------------------===//
-//
-// This source file is part of the swift-loader open source project
-//
-// Copyright (c) 2024-2025 Coen ten Thije Boonkkamp and the swift-loader project authors
-// Licensed under Apache License v2.0
-//
-// See LICENSE for license information
-//
-// ===----------------------------------------------------------------------===//
-
 internal import Type_Metadata_Shims
 
 extension Loader {
-    /// Enumerates all Swift types whose name contains the given substring.
-    ///
-    /// Walks the `__swift5_types` section across all loaded images and filters
-    /// types by name. Used for legacy test discovery on Swift < 6.3.
-    ///
-    /// - Parameter substring: The name pattern to match (e.g., `"__🟡$"`).
-    /// - Returns: An array of matching Swift metatypes.
+
     public static func types(
         named substring: some StringProtocol
     ) -> [Any.Type] {

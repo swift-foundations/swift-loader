@@ -1,14 +1,3 @@
-// ===----------------------------------------------------------------------===//
-//
-// This source file is part of the swift-loader open source project
-//
-// Copyright (c) 2024-2026 Coen ten Thije Boonkkamp and the swift-loader project authors
-// Licensed under Apache License v2.0
-//
-// See LICENSE for license information
-//
-// ===----------------------------------------------------------------------===//
-
 import Loader
 import Loader_Test_Support
 import Testing
