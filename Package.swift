@@ -23,12 +23,12 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-primitives/swift-loader-primitives.git",
+            url: "https://github.com/swift-molecules/swift-loader.git",
             branch: "main"
         ),
-        .package(url: "https://github.com/swift-foundations/swift-posix.git", branch: "main"),
-        .package(url: "https://github.com/swift-foundations/swift-darwin.git", branch: "main"),
-        .package(url: "https://github.com/swift-foundations/swift-linux.git", branch: "main"),
+        .package(url: "https://github.com/swift-compositions/swift-posix.git", branch: "main"),
+        .package(url: "https://github.com/swift-compositions/swift-darwin.git", branch: "main"),
+        .package(url: "https://github.com/swift-compositions/swift-linux.git", branch: "main"),
     ],
     targets: [
         .target(
@@ -38,7 +38,7 @@ let package = Package(
             name: "Loader",
             dependencies: [
                 "Type Metadata Shims",
-                .product(name: "Loader Primitives", package: "swift-loader-primitives"),
+                .product(name: "Loader", package: "swift-loader"),
                 .product(
                     name: "POSIX Loader",
                     package: "swift-posix",

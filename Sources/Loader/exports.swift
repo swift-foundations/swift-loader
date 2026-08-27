@@ -1,4 +1,4 @@
-@_exported public import Loader_Primitives
+@_exported public import Loader
 
 #if canImport(Darwin)
     @_exported public import Darwin_Loader

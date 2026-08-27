@@ -50,7 +50,7 @@ Add swift-loader to your Package.swift:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-foundations/swift-loader.git", branch: "main")
+    .package(url: "https://github.com/swift-compositions/swift-loader.git", branch: "main")
 ]
 ```
 
@@ -135,10 +135,10 @@ The `Loader Test Support` product gives test targets a stable import for loader-
 
 ### Dependencies
 
-- [swift-loader-primitives](https://github.com/swift-primitives/swift-loader-primitives) — The shared `Loader` namespace vocabulary: `Loader.Error`, `Loader.Section.Name`, `Loader.Section.Bounds`, `Loader.Library.Handle`. Pre-release; no tags yet.
-- [swift-posix](https://github.com/swift-foundations/swift-posix) — POSIX loader stack: `dlopen`/`dlclose` wrappers.
-- [swift-darwin](https://github.com/swift-foundations/swift-darwin) — Darwin loader stack: dyld section access and `dlsym` symbol lookup.
-- [swift-linux](https://github.com/swift-foundations/swift-linux) — Linux loader stack: Swift metadata-section enumeration.
+- [swift-loader](https://github.com/swift-molecules/swift-loader) — The shared `Loader` namespace vocabulary: `Loader.Error`, `Loader.Section.Name`, `Loader.Section.Bounds`, `Loader.Library.Handle`. Pre-release; no tags yet.
+- [swift-posix](https://github.com/swift-compositions/swift-posix) — POSIX loader stack: `dlopen`/`dlclose` wrappers.
+- [swift-darwin](https://github.com/swift-compositions/swift-darwin) — Darwin loader stack: dyld section access and `dlsym` symbol lookup.
+- [swift-linux](https://github.com/swift-compositions/swift-linux) — Linux loader stack: Swift metadata-section enumeration.
 
 ---
 
