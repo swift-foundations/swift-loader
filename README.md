@@ -135,7 +135,7 @@ The `Loader Test Support` product gives test targets a stable import for loader-
 
 ### Dependencies
 
-- [swift-loader](https://github.com/swift-molecules/swift-loader) — The shared `Loader` namespace vocabulary: `Loader.Error`, `Loader.Section.Name`, `Loader.Section.Bounds`, `Loader.Library.Handle`. Pre-release; no tags yet.
+- [swift-loader-vocabulary](https://github.com/swift-molecules/swift-loader-vocabulary) — The shared `Loader` namespace vocabulary: `Loader.Error`, `Loader.Section.Name`, `Loader.Section.Bounds`, `Loader.Library.Handle`. Pre-release; no tags yet.
 - [swift-posix](https://github.com/swift-compositions/swift-posix) — POSIX loader stack: `dlopen`/`dlclose` wrappers.
 - [swift-darwin](https://github.com/swift-compositions/swift-darwin) — Darwin loader stack: dyld section access and `dlsym` symbol lookup.
 - [swift-linux](https://github.com/swift-compositions/swift-linux) — Linux loader stack: Swift metadata-section enumeration.

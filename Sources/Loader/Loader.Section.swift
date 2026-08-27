@@ -1,4 +1,4 @@
-public import Loader
+public import Loader_Vocabulary
 
 #if canImport(Darwin)
     public import Darwin_Loader

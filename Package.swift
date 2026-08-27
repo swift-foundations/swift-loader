@@ -23,7 +23,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-loader.git",
+            url: "https://github.com/swift-molecules/swift-loader-vocabulary.git",
             branch: "main"
         ),
         .package(url: "https://github.com/swift-compositions/swift-posix.git", branch: "main"),
@@ -38,7 +38,7 @@ let package = Package(
             name: "Loader",
             dependencies: [
                 "Type Metadata Shims",
-                .product(name: "Loader", package: "swift-loader"),
+                .product(name: "Loader", package: "swift-loader-vocabulary"),
                 .product(
                     name: "POSIX Loader",
                     package: "swift-posix",

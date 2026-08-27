@@ -1,6 +1,6 @@
 #if os(Windows)
 
-    import Loader
+    import Loader_Vocabulary
     extension Loader.Symbol {
 
         @inlinable
