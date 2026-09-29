@@ -22,6 +22,7 @@ let package = Package(
         ),
     ],
     dependencies: [
+        .package(url: "https://github.com/swift-atoms/swift-parser.git", branch: "main", traits: ["Map", "IteratorLeaves", "Product", "Skip", "Append", "Either", "Iterator"]),
         .package(
             url: "https://github.com/swift-molecules/swift-loader-vocabulary.git",
             branch: "main"
