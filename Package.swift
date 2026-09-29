@@ -38,7 +38,7 @@ let package = Package(
             name: "Loader",
             dependencies: [
                 "Type Metadata Shims",
-                .product(name: "Loader", package: "swift-loader-vocabulary"),
+                .product(name: "Loader Vocabulary", package: "swift-loader-vocabulary"),
                 .product(
                     name: "POSIX Loader",
                     package: "swift-posix",
